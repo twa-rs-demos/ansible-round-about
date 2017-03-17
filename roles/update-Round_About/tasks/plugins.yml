@@ -1,0 +1,26 @@
+---
+- name: Download WP-CLI
+  get_url: url={{ wp_cli_url }} dest={{ wp_cli }} mode=0755 owner=ubuntu group=ubuntu
+  tags: download
+
+- name: Copy WP-CLI into container
+  shell: docker cp {{ wp_cli }}  roundabout_wordpress_1:{{ wp_cli_bin }}
+  tags: copy
+
+- name: Active Wordpress theme spike
+  shell: docker exec roundabout_wordpress_1 bash -c "cd {{ theme_root }} && {{ wp_cli_bin }} theme activate spike --allow-root "
+  tags: activate_theme
+
+- name: Delete Hello Dolly plugin
+  shell: docker exec roundabout_wordpress_1 bash -c  "{{ wp_cli_bin }}  plugin delete hello --allow-root"
+
+- name: Install WordPress plugins
+  shell: docker exec roundabout_wordpress_1 bash -c  "{{ wp_cli_bin }}  plugin install {{ item.name }} --version={{ item.version }} --activate --force --allow-root "
+  with_items:
+    - { name: advanced-custom-fields, version: 4.4.11 }
+    - { name: php-code-for-posts,  version: 2.2.2.1 }
+    - { name: polylang, version: 2.1.2 }
+  tags: install_plugins
+
+
+

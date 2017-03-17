@@ -1,0 +1,5 @@
+---
+ra_src_root: /home/afaren/workspace/working-directory/
+ra_dir: round-about
+ra_dest: /home/afaren
+ra_tar: round-about.tar.gz

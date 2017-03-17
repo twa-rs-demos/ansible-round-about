@@ -1,0 +1,7 @@
+---
+
+- name: Archive round-about
+  shell: tar -czf {{ ra_tar }}  {{ ra_dir }} && mv {{ ra_tar }} {{ ra_dest }}
+  args:
+    chdir: "{{ ra_src_root  }}"
+  tags: tar

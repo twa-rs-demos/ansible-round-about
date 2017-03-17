@@ -1,0 +1,4 @@
+---
+
+- name: Verify docker command without sudo
+  command: docker run hello-world

@@ -1,0 +1,12 @@
+---
+- name: Unpack after coping tar to remote
+  unarchive:
+    src: /home/afaren/{{ ra_tar }}
+    dest: /home/ubuntu/
+    owner: ubuntu
+    group: ubuntu
+  notify: Update service
+  tags: unpack
+
+- include: plugins.yml tags=plugins
+

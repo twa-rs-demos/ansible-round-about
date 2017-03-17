@@ -1,0 +1,43 @@
+---
+- name: Install extra packages for ubuntu 14.04 - 1
+  apt:
+    name: linux-image-extra-3.13.0-48-generic
+    state: present
+  become_method: sudo
+
+- name: Install extra packages for ubuntu 14.04 - 2
+  apt:
+    name: linux-image-extra-virtual
+    state: present
+  become_method: sudo
+
+- name: Uninstall (or update) docker.io
+  apt:
+    name: docker.io
+    state: absent
+
+- name: Install (or update) docker-ce
+  apt:
+    name: docker-ce
+    state: present
+
+- name: Manage Docker as a non-root user
+  shell: "groupadd -f docker && usermod -aG docker ubuntu"
+  become_method: sudo
+  notify: Verify docker command without sudo
+
+
+- name: Installing packages
+  action: "{{ ansible_pkg_mgr }} pkg={{ item }} state=present"
+  with_items:
+    - python-setuptools
+
+- name: Installing dependencies for docker-compose
+  easy_install:
+    name: pip
+    state: present
+
+- name: Installing docker-compose
+  pip:
+    name: docker-compose
+    state: present
