@@ -1,31 +1,13 @@
 ---
-- name: Install extra packages for ubuntu 14.04 - 1
-  apt:
-    name: linux-image-extra-3.13.0-48-generic
-    state: present
+- name: Install Docker
+  shell: "curl -sSL https://get.docker.com/ | sh"
   become_method: sudo
-
-- name: Install extra packages for ubuntu 14.04 - 2
-  apt:
-    name: linux-image-extra-virtual
-    state: present
-  become_method: sudo
-
-- name: Uninstall (or update) docker.io
-  apt:
-    name: docker.io
-    state: absent
-
-- name: Install (or update) docker-ce
-  apt:
-    name: docker-ce
-    state: present
+  tags: install_docker
 
 - name: Manage Docker as a non-root user
-  shell: "groupadd -f docker && usermod -aG docker ubuntu"
+  shell: "usermod -aG docker $USER"
   become_method: sudo
   notify: Verify docker command without sudo
-
 
 - name: Installing packages
   action: "{{ ansible_pkg_mgr }} pkg={{ item }} state=present"
