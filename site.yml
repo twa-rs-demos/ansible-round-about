@@ -1,13 +1,19 @@
 ---
-- name: Archive Round-About
+- name: Archive Round-About in local
   hosts: local
   roles:
     - { role: archive, tags: archive }
 
 
-- name: Install Docker, deploy project Round-About
+- name: Install Docker
   hosts: remote
   sudo: yes
   roles:
     - { role: docker, tags: docker }
-    - { role: update-Round_About, tags: update-Round_About }
+
+
+- name: Deploy Round-About
+  hosts: remote
+  sudo: yes
+  roles:
+    - { role: deploy, tags: deploy }
