@@ -1,12 +1,12 @@
 ---
-- name: Unpack after coping tar to remote
+- name: Unarchive after coping tar to remote
   unarchive:
     src: "{{ ra_archive }}"
     dest: "{{ ra_remote_dest }}"
     owner: ubuntu
     group: ubuntu
   notify: Update service
-  tags: unpack
+  tags: unarchive
 
 - include: plugins.yml tags=plugins
 
