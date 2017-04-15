@@ -3,7 +3,7 @@
   unarchive:
     src: "{{ ra_archive }}"
     dest: "{{ ra_remote_dest }}"
-  notify: Update service
+  notify: Make sure roundabout_wordpress_1 is started
   tags: unarchive
 
 - include: plugins.yml tags=plugins

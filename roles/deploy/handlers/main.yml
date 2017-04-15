@@ -1,6 +1,6 @@
 ---
-- name: Update service
-  command: 'docker-compose up -d'
+- name: Make sure roundabout_wordpress_1 is started
+  command: docker-compose up -d
   args:
     chdir: "{{ ra_remote_path }}"
 
