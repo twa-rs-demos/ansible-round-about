@@ -6,7 +6,7 @@
 
 
 - name: Install Docker, deploy project Round-About
-  hosts: show_case
+  hosts: remote
   sudo: yes
   roles:
     - { role: docker, tags: docker }
