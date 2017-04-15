@@ -1,5 +1,5 @@
 ---
-wp_cli: /home/ubuntu/wp
+wp_cli: /tmp/wp
 wp_cli_bin: /usr/bin/wp
 wp_cli_url: https://raw.github.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 theme_root: /var/www/html/wp-content/themes
