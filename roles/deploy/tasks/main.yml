@@ -1,8 +1,8 @@
 ---
 - name: Unpack after coping tar to remote
   unarchive:
-    src: /home/afaren/{{ ra_tar }}
-    dest: /home/ubuntu/
+    src: "{{ ra_archive }}"
+    dest: "{{ ra_remote_dest }}"
     owner: ubuntu
     group: ubuntu
   notify: Update service

@@ -2,5 +2,5 @@
 - name: Update service
   command: 'docker-compose up -d'
   args:
-    chdir: /home/ubuntu/round-about
+    chdir: "{{ ra_remote_path }}"
 
