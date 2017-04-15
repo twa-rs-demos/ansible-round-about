@@ -3,8 +3,6 @@
   unarchive:
     src: "{{ ra_archive }}"
     dest: "{{ ra_remote_dest }}"
-    owner: ubuntu
-    group: ubuntu
   notify: Update service
   tags: unarchive
 
