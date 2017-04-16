@@ -5,6 +5,11 @@
     dest: "{{ ra_path }}"
   tags: git
 
+- name: Create docker-compose .env file
+  template:
+    src: env.j2
+    dest: "{{ ra_path }}/.env"
+
 - name: Archive round-about
   archive:
     path: "{{ ra_path }}"
