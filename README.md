@@ -5,7 +5,7 @@
 This playbook will
 - install docker and docker-compose
 - setup Wordpress container
-- setup MySQL container, restore data we already had.
+- setup MySQL container, restore website data.
 
 ## Prerequisite
 - [Ansible](http://docs.ansible.com/ansible/intro_installation.html) version >= 2.3
