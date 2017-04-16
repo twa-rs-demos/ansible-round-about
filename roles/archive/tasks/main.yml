@@ -5,7 +5,7 @@
     dest: "{{ ra_path }}"
   tags: git
 
-- name: Create docker-compose .env file
+- name: Create .env file for docker-compose
   template:
     src: env.j2
     dest: "{{ ra_path }}/.env"
