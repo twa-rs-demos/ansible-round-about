@@ -1,5 +1,5 @@
 ---
-ra_path: /home/afaren/workspace/round-about
-ra_archive: /home/afaren/round-about.tar.gz
+ra_path: /tmp/round-about
+ra_archive: /tmp/round-about.tar.gz
 ra_remote_dest: /home/ubuntu/
 ra_remote_path: /home/ubuntu/round-about
