@@ -43,7 +43,7 @@ You need to add your AWS instance external IP into `inventory`, example is alrea
 as instance, you may change the `inventory` like below
 ```
 [remote]
-54.111.23.123 # your instance ip
+66.111.23.123 # your instance ip
 
 ...
 ```
