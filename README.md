@@ -59,6 +59,7 @@ $ ansible-playbook site.yml --private-key <private_key.pem> -i inventory -u ubun
 ```bash
 round-about-deploy
 ├── group_vars
+├── images
 ├── inventory
 ├── private_key.pem  # put it under [round-about-deploy] directory
 ├── README.md
