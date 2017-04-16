@@ -1,10 +1,16 @@
 ---
+
 - name: Unarchive after coping tar to remote
   unarchive:
     src: "{{ ra_archive }}"
     dest: "{{ ra_remote_dest }}"
-  notify: Make sure roundabout_wordpress_1 is started
   tags: unarchive
 
+- name: Start containers
+  command: docker-compose up -d
+  args:
+    chdir: "{{ ra_remote_path }}"
+
+- include: mysql.yml tags=mysql
 - include: plugins.yml tags=plugins
 

@@ -1,0 +1,7 @@
+---
+# sleep 20s to make sure containers ready to work
+- name: Restore round_about.sql
+  shell: sleep 20 && docker exec -i roundabout_mysql_1 mysql -u{{ DB_USER }} -p{{ DB_PASSWORD }} {{ DB_NAME }} < round_about.sql
+  args:
+    chdir: "{{ ra_remote_path }}"
+  tags: restore

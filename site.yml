@@ -14,6 +14,5 @@
 
 - name: Deploy Round-About
   hosts: remote
-  become: true
   roles:
     - { role: deploy, tags: deploy }

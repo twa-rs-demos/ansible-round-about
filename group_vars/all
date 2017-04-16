@@ -3,3 +3,12 @@ ra_path: /tmp/round-about
 ra_archive: /tmp/round-about.tar.gz
 ra_remote_dest: /home/ubuntu/
 ra_remote_path: /home/ubuntu/round-about
+
+# setup domain as what you want as below
+domain: www.roundabout.com
+
+# setup mysql configuration as below
+DB_NAME: round_about
+DB_ROOT_PASSWORD: round_about
+DB_USER: round_about
+DB_PASSWORD: round_about

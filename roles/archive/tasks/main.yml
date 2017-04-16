@@ -3,12 +3,19 @@
   git:
     repo: https://github.com/twa-rs-demos/round-about.git
     dest: "{{ ra_path }}"
+    force: yes
   tags: git
 
 - name: Create .env file for docker-compose
   template:
     src: env.j2
     dest: "{{ ra_path }}/.env"
+
+- name: Substitute domain
+  command: sed -i 's/demo:8080/{{ domain | quote }}/g' round_about.sql
+  args:
+    chdir: "{{ ra_path }}"
+  tags: domain
 
 - name: Archive round-about
   archive:
