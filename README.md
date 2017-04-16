@@ -65,3 +65,49 @@ round-about-deploy
 ├── roles
 └── site.yml
 ```
+
+## Login
+After finish deploying, you can login as admin by get browser request `www.roundabout.com/wp-admin`, then you'll see
+
+![Login page](images/login.png)
+
+
+Fill the login form with initialization account and password
+
+```
+- account:   mahong-Lenovo-G410
+- password:  mahong-Lenovo-G410
+```
+
+![fill form](images/fill-form.png)
+
+
+Normally, you'll get into dashboard
+
+![dashboard](images/dashboard.png)
+
+
+You can change setup in settings page
+
+![settings](images/settings.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
